@@ -59,5 +59,17 @@
 	display: block;
 	color: black;
 	text-decoration: none;
-	padding: 5px 0;
+	padding: 5px 25px;
+	position: relative;
+}
+
+.item-documents a:before {
+	content: '';
+	background: url(./icons/docs.png);
+	background-size: cover;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0;
+	top: 5px;
 }
