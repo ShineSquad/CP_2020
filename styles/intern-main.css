@@ -1,0 +1,63 @@
+.tasks {
+	width: 25%;
+	background-color: blue;
+	float: left;
+}
+
+.active-tasks {
+	width: 50%;
+	background-color: brown;
+}
+
+.check-list {
+	width: 25%;
+	background-color: yellow;
+	float: right;
+}
+
+.active-tasks-title {
+	width: 100%;
+	height: 50px;
+	background-color: silver;
+	text-align: center;
+	line-height: 50px;
+}
+
+.active-tasks-container {
+	height: calc( 100% - 50px);
+	width: 100%;
+	overflow-y: auto;
+	background-color: grey;
+}
+
+.active-item {
+	width: calc( 100% - 10px);
+	background-color: blue;
+	height: auto;
+	padding-left: 10px;
+	border-bottom: 1px solid black;
+}
+
+.item-title {
+	width: 100%;
+	font-size: 18px;
+	font-weight: bold;
+	height: auto;
+	padding: 5px 0;
+}
+
+.item-description {
+	width: 100%;
+	height: auto;
+}
+
+.item-documents {
+	height: auto;
+}
+
+.item-documents a {
+	display: block;
+	color: black;
+	text-decoration: none;
+	padding: 5px 0;
+}

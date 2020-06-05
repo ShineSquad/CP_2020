@@ -1,4 +1,7 @@
 <html>
 	<?php require "components/head.htm" ?>
-	<?php require "components/main.htm" ?>
+	<body>
+		<a href="./intern.php"> Стажер</a>
+		<a href="./supervisor.php">Руководитель</a>
+	</body>
 </html>
