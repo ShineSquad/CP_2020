@@ -1,51 +1,97 @@
 header {
+	height: 120px;
 	width: 100%;
-	height: 5vh;
-	background-color: #84DCC6;
+	background-color: white;
+	box-shadow: 0px 3px 10px rgba(148, 148, 148, 0.15);
+	position: relative;
 }
 
-header div {
+header .changemenu {
+	position: absolute;
+	top: 0;
+	left: calc(50% - 100px);
+}
+
+header .changemenu .view select {
+	width: 150px;
+	height: 100%;
+	outline: none;
+	border: none;
+}
+
+header .changemenu .view {
+	height: 0;
+}
+
+header .changemenu .triangle {
+	position: relative;
+}
+
+header .changemenu .triangle::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid green; /* Добавляем треугольник */
+    cursor: pointer;
+	left: 65px;
+}
+
+header .header-container {
+	margin-left: calc( 50% - 450px );
+	height: 100%;
+	width: 900px;
+}
+
+header .header-container * {
+	height: 100%;
 	display: inline-block;
 }
 
-.role {
-	width: 60%;
-	height: 100%;
+header .header-container .logo-container {
+	width: 20%;
+	float: left;
 }
 
-.role a {
-	display: inline-block;
-	height: 100%;
-	line-height: 35px;
+header .header-container .logo-container img {
+	height: 50px;
+	margin-top: 35px;
+}
+
+header .header-container .title-container {
 	width: 50%;
 	text-align: center;
-	text-decoration: none;
-	color: black;
 }
 
-.role a:last-child {
-	float: right;
+header .header-container .title-container .title {
+	line-height: 27px;
+	color: #C4C4C4;
+	font-size: 16px;
+	margin-top: 44px;
 }
 
-.role a:hover {
-	background-color: #84CCD6;
-}
-
-.user-list {
-	width: 40%;
-	height: 100%;
-	float: right;
-}
-
-.user-list select {
-	height: 100%;
+header .header-container .user-container {
 	width: 30%;
 	float: right;
-	outline: none;
-	cursor: pointer;
+	display: inline-block;
 }
 
-.change_name {
+header .header-container .user-container .avatar-container {
+	height: 100%;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+header .header-container .user-container .avatar-container .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	background-color: grey;
+	float: left;
+}
+
+header .header-container .user-container .fio-container {
 	height: 100%;
 	float: right;
+	line-height: 120px;
+	margin-right: 70px;
 }

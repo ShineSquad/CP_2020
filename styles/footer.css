@@ -1,0 +1,79 @@
+footer {
+	width: 900px;
+	height: 150px;
+	margin-left: calc( 50% - 450px );
+	padding-bottom: 50px;
+}
+
+footer div {
+	display: inline-block;
+}
+
+footer .footer-left {
+	width: 300px;
+	height: 100%;
+	line-height: 21px;
+	align-items: center;
+	font-size: 14px;
+}
+
+footer .footer-left .left-content {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}	
+
+footer .footer-right {
+	width: 600px;
+	height: 100%;
+	float: right;
+	background-color: #F4F4F4;
+	border-radius: 5px;
+}
+
+footer .footer-right div {
+	display: inline-block;
+}
+
+footer .footer-right .curator-info {
+	width: 320px;
+	float: left;
+	height: 100%;
+}
+
+footer .footer-right .curator-info .info-content {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	line-height: 20px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+footer .footer-right .arrow {
+	width: 20px;
+	height: 100%;
+	text-align: center;
+}
+
+footer .footer-right .arrow img {
+	width: 17px;
+	height: 17px;
+	margin-top: 67px;
+}
+
+footer .footer-right .curator-data {
+	width: 260px;
+	float: right;
+	height: 100%;
+}
+
+footer .footer-right .curator-data .data-content {
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	line-height: 25px;
+	padding-left: 30px;
+}
