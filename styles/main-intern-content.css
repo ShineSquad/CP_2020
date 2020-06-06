@@ -75,7 +75,7 @@ main .main-content .top-content .active-tasks {
 }
 
 main .main-content .top-content .active-tasks:after {
-	content: '2';
+	content: attr(task-count);
 	height: 50px;
 	width: 50px;
 	background-color: #47F98A;
