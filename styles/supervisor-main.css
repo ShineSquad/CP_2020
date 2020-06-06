@@ -1,17 +1,14 @@
 .current-tasks {
 	width: 25%;
-	background-color: blue;
 	float: left;
 }
 
 .documents {
 	width: 50%;
-	background-color: brown;
 }
 
 .intern-list {
 	width: 25%;
-	background-color: yellow;
 	float: right;
 }
 
@@ -27,7 +24,7 @@
 	height: calc( 100% - 50px);
 	width: 100%;
 	overflow-y: auto;
-	background-color: grey;
+	background-color: white;
 }
 
 .check-item {

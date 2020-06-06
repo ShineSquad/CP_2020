@@ -10,6 +10,19 @@
 					<div class="item">
 						Сделать мне кофе
 					</div>
+					<?php
+						$sql = "SELECT * FROM tasks";
+						$result = mysqli_query($link, $sql);
+						while ($row = mysqli_fetch_assoc($result)) {
+							$id = $row['id'];
+							$title = $row['title'];
+							echo "
+								<div class='item' id='$id'>
+									$title
+								</div>
+							";
+						}
+					?>
 				</div>
 			</div>
 			<div class="active-tasks">
@@ -21,8 +34,8 @@
 						<div class="item-title">Название</div>
 						<div class="item-description">Описание Описание ОписаниеОписаниеОписаниеОписание Описание ОписаниеОписаниеОписаниеОписание Описание Описание Описание Описание</div>
 						<div class="item-documents">
-							<a href="#">Документ 1</a>
-							<a href="#">Документ 2</a>
+							<a href="#" download>Документ 1</a>
+							<a href="#" download>Документ 2</a>
 						</div>
 					</div>
 				</div>

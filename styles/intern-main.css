@@ -1,17 +1,14 @@
 .tasks {
 	width: 25%;
-	background-color: blue;
 	float: left;
 }
 
 .active-tasks {
 	width: 50%;
-	background-color: brown;
 }
 
 .check-list {
 	width: 25%;
-	background-color: yellow;
 	float: right;
 }
 
@@ -27,12 +24,10 @@
 	height: calc( 100% - 50px);
 	width: 100%;
 	overflow-y: auto;
-	background-color: grey;
 }
 
 .active-item {
 	width: calc( 100% - 10px);
-	background-color: blue;
 	height: auto;
 	padding-left: 10px;
 	border-bottom: 1px solid black;
