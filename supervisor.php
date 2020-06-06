@@ -22,7 +22,7 @@
 							echo "
 								<label for='$node_id' class='item' id='$id'>
 									$title
-									<input id='$node_id' type='radio' name='task'/>
+									<input id='$node_id' type='radio' name='task' value='$id'/>
 								</label>
 							";
 						}
@@ -48,7 +48,7 @@
 								}
 							?>
 						</select>
-						<input type="submit" name="change_position" value="Изменить профессию">
+						<input type="submit" class="change_position" name="change_position" value="Изменить профессию">
 					</dorm>
 				</div>
 				<div class="check-container">
@@ -68,7 +68,7 @@
 							$node_id="m_".$id;
 							echo "
 								<label for='$node_id' class='check-item' id='$id'>
-									<input id='$node_id' type='checkbox' name='document'>
+									<input id='$node_id' type='checkbox' name='document'  value='$id'>
 									<p>$name</p>
 								</label>
 							";
@@ -99,7 +99,7 @@
 							echo "
 								<label for='$node_id' class='item' id='$id'>
 									$name
-									<input id='$node_id' type='radio' name='intern'/>
+									<input id='$node_id' type='radio' name='intern' value='$id'/>
 								</label>
 							";
 						}
@@ -108,7 +108,31 @@
 			</div>
 		</main>
 		<footer>
-			<button onclick="apply_task()">Выдать задание</button>
+			<button onclick="apply_task(); return false;">Выдать задание</button>
 		</footer>
 	</body>
 </html>
+
+<?php
+// http://localhost/CP_2020/supervisor.php?apply_task=1&task=4&d_1=1&d_2=2&intern=4
+	if (isset($_GET["apply_task"])) {
+		$task = $_GET["task"];
+		$intern = $_GET["intern"];
+
+		$sql = "UPDATE tasks SET from_id=$user_id, to_id=$intern WHERE id=$task";
+		mysqli_query($link, $sql);
+
+		$sql = "INSERT INTO task_instructions (id, task_id, instruction_id)
+				VALUES ";
+
+		$values = array();
+		foreach ($_GET as $key => $value) {
+			if (preg_match("/d_/", $key)) {
+				$values[] = "(NULL, $task, $value)";
+			}
+		}
+		
+		$sql .= implode(",", $values);
+		mysqli_query($link, $sql);
+	}
+?>

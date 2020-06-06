@@ -44,3 +44,8 @@ header div {
 	outline: none;
 	cursor: pointer;
 }
+
+.change_name {
+	height: 100%;
+	float: right;
+}
