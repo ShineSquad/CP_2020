@@ -1,0 +1,233 @@
+main {
+	width: 900px;
+	height: auto;
+	padding: 50px 0;
+	margin-left: calc( 50% - 450px );
+}
+
+main .title-instruction {
+	padding: 50px 0;
+	width: 100%;
+	text-align: left;
+	font-size: 64px;
+	font-weight: bold;
+	color: #EEEEEE;
+}
+
+main .main-content {
+	width: 100%;
+	height: auto;
+}
+
+main .main-content .top-content {
+	width: 100%;
+	height: auto;
+}
+
+main .main-content .top-content * {
+	height: 300px;
+	display: inline-block;
+	width: 49.8%;
+	cursor: pointer;
+}
+
+main .main-content .top-content *:hover {
+	opacity: 0.9;
+}
+
+main .main-content .top-content .main-regulations {
+	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	border-radius: 4px;
+	position: relative;
+}
+
+main .main-content .top-content .main-regulations .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .main-regulations .card-img img {
+	padding: 35px;
+	width: 50px;
+	height: 65px;
+}
+
+main .main-content .top-content .main-regulations .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .main-regulations .card-title p {
+	font-size: 36px;
+	line-height: 40px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .top-content .active-tasks {
+	background: linear-gradient(125.38deg, #5ADB6F 19.12%, #68E48B 86.53%);
+	border-radius: 4px;
+	float: right;
+	position: relative;
+}
+
+main .main-content .top-content .active-tasks:after {
+	content: '2';
+	height: 50px;
+	width: 50px;
+	background-color: #47F98A;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-size: 27px;
+}
+
+main .main-content .top-content .active-tasks .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .active-tasks .card-img img {
+	padding: 35px;
+	width: 50px;
+	height: 65px;
+}
+
+main .main-content .top-content .active-tasks .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .active-tasks .card-title p {
+	font-size: 36px;
+	line-height: 40px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content {
+	width: 100%;
+	height: auto;
+	margin-top: 3px;
+}
+
+main .main-content .bottom-content div {
+	display: inline-block;
+	cursor: pointer;
+}
+
+main .main-content .bottom-content div:hover {
+	opacity: 0.9;
+}
+
+main .main-content .bottom-content .job-responsibilities {
+	height: 230px;
+	width: 300px;
+	background: linear-gradient(123.65deg, #52C3D4 19.12%, #60DBDB 86.53%);
+	border-radius: 4px;
+	float: left;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-img img {
+	padding: 35px;
+	width: 40px;
+	height: 55px;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content .documents {
+	height: 230px;
+	width: 320px;
+	background: linear-gradient(304.21deg, #FBD642 20.06%, #FFC32A 78.71%);
+	border-radius: 4px;
+	margin-left: 3px;
+}
+
+main .main-content .bottom-content .documents .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .documents .card-img img {
+	padding: 35px;
+	width: 55px;
+	height: 55px;
+}
+
+main .main-content .bottom-content .documents .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .documents .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content .institute-structure {
+	height: 230px;
+	float: right;
+	width: 272px;
+	background: linear-gradient(115.74deg, #6796FC 19.12%, #6BB7FC 86.53%);
+	border-radius: 4px;
+}
+
+main .main-content .bottom-content .institute-structure .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .institute-structure .card-img img {
+	padding: 35px;
+	width: 65px;
+	height: 35px;
+}
+
+main .main-content .bottom-content .institute-structure .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .institute-structure .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+} 
