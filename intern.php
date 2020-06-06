@@ -6,24 +6,20 @@
 	<?php require "components/head.htm" ?>
 	<body>
 		<?php require "components/header.htm" ?>
-		<main>
+		<main class="intern-main">
 			<div class="tasks">
 				<div class="title">Текущие задачи</div>
 				<div class="list-container">
-					<div class="item">
-						Сделать мне кофе
-					</div>
 					<?php
 						$sql = "SELECT * FROM tasks WHERE to_id=$user_id";
 						$result = mysqli_query($link, $sql);
 						while ($row = mysqli_fetch_assoc($result)) {
 							$id = $row['id'];
 							$title = $row['title'];
-							echo $id;
 
 							$out = "<form method='GET'>
 								<input type='text' name='task_id' value='$id' style='display:none'>
-								<input type='submit' name='see_task' value='$title'>
+								<input type='submit' name='see_task' class='see_task' value='$title'>
 							</form>";
 
 							echo $out;
@@ -36,7 +32,6 @@
 					Текущие задачи
 				</div>
 				<div class="active-tasks-container">
-					
 						<?php
 							if (isset($_GET["see_task"])) {
 								$id = $_GET["task_id"];
@@ -58,8 +53,6 @@
 										INNER JOIN instructions
 										ON task_instructions.instruction_id = instructions.id
 										WHERE task_instructions.task_id = $id";
-
-								echo $sql;
 								$result = mysqli_query($link, $sql);
 								while ($row = mysqli_fetch_assoc($result)) {
 									$d_link = $row["link"];
