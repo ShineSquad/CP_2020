@@ -34,22 +34,6 @@
 					<div class="title-name">
 						Документы
 					</div>
-					<form class="title-select" method="GET">
-						<select name="position">
-							<?php
-								$sql = "SELECT * FROM positions";
-								$result = mysqli_query($link, $sql);
-								while ($row = mysqli_fetch_assoc($result)) {
-									$id = $row['id'];
-									$name = $row['name'];
-									echo "
-										<option id='$id' value='$id'>$name</option>
-									";
-								}
-							?>
-						</select>
-						<input type="submit" class="change_position" name="change_position" value="Изменить профессию">
-					</dorm>
 				</div>
 				<div class="check-container">
 					<?php
@@ -74,7 +58,7 @@
 								while ($row = mysqli_fetch_assoc($result)) {
 									$pos_name = $row["name"];
 								}
-								echo $pos_name;
+								// echo $pos_name;
 							}
 							
 						$sql = "SELECT instructions.* FROM instructions
@@ -162,7 +146,7 @@
 		}
 		
 		$sql .= implode(",", $values);
-		echo $sql;
+		// echo $sql;
 		mysqli_query($link, $sql);
 	}
 ?>
