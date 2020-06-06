@@ -1,0 +1,8 @@
+#!/bin/bash
+
+git update-index --assume-unchanged debug/db_link.php && git pull
+
+# $host  = "localhost";
+# $user  = "u1022297_default";
+# $pwd   = "_s98hcH1";
+# $db    = "u1022297_default";
