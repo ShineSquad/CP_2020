@@ -12,6 +12,7 @@
 	mysqli_query($link, $sql);
 
 	$base = $_SERVER['DOCUMENT_ROOT'] . '/CP_2020/data/';
+	echo $_SERVER['DOCUMENT_ROOT'];
 
 	$instructions = scandir($base);
 
