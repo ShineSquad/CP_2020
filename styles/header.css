@@ -2,4 +2,45 @@ header {
 	width: 100%;
 	height: 5vh;
 	background-color: #84DCC6;
-} 
+}
+
+header div {
+	display: inline-block;
+}
+
+.role {
+	width: 60%;
+	height: 100%;
+}
+
+.role a {
+	display: inline-block;
+	height: 100%;
+	line-height: 35px;
+	width: 50%;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+}
+
+.role a:last-child {
+	float: right;
+}
+
+.role a:hover {
+	background-color: #84CCD6
+}
+
+.user-list {
+	width: 40%;
+	height: 100%;
+	float: right;
+}
+
+.user-list select {
+	height: 100%;
+	width: 30%;
+	float: right;
+	outline: none;
+	cursor: pointer;
+}

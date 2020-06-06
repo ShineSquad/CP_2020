@@ -1,11 +1,14 @@
-<?php require "./debug/db_link.php" ?>
+<?php 
+	require "./debug/db_link.php";
+	$user_type = 3;
+?>
 <html>
 	<?php require "components/head.htm" ?>
 	<body>
 		<?php require "components/header.htm" ?>
 		<main>
 			<div class="tasks">
-				<div class="title">Задачи</div>
+				<div class="title">Текущие задачи</div>
 				<div class="list-container">
 					<div class="item">
 						Сделать мне кофе

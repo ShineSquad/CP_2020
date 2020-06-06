@@ -1,3 +1,35 @@
 <header>
-	
+	<div class="role">
+		<a href="./supervisor.php">Руководитель</a>
+		<a href="./intern.php">Стажер</a>
+	</div>
+	<div class="user-list">
+		<form method="GET">
+			<select name="users" id="">
+				<?php
+					$user_id=
+					$sql = "SELECT * FROM users
+					WHERE role_id=$user_type";
+					$result = mysqli_query($link, $sql);
+					$first = true;
+					while ($row = mysqli_fetch_assoc($result)) {
+						if($first) {
+							$user_id = $row["id"];
+							$first = false;
+						}
+						$id = $row['id'];
+						$name = $row['name'];
+						echo "
+							<option value='$id'>$name</option>
+						";
+					}
+					if(isset($_GET["change_user"])) {
+						$user_id = $_GET["users"];
+					}
+
+				?>
+			</select>
+			<input type="submit" name="change_user" value="Изменить пользователя">
+		</form>
+	</div>
 </header> 
