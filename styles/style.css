@@ -1,64 +1,663 @@
 * {
 	margin: 0;
 	padding: 0;
-	font-family: 'Roboto';
+	font-family: 'Circe',Arial,sans-serif;
 	user-select: none;
 }
 
-main {
+/*header*/
+
+header {
+	height: 120px;
 	width: 100%;
-	height: 90vh;
+	background-color: white;
+	box-shadow: 0px 3px 10px rgba(148, 148, 148, 0.15);
 }
 
-main div {
+header .header-container {
+	margin-left: calc( 50% - 450px );
+	height: 100%;
+	width: 900px;
+}
+
+header .header-container * {
 	height: 100%;
 	display: inline-block;
 }
 
-.title {
-	width: 100%;
+header .header-container .logo-container {
+	width: 20%;
+	float: left;
+}
+
+header .header-container .logo-container img {
 	height: 50px;
-	background-color: pink;
+	margin-top: 35px;
+}
+
+header .header-container .title-container {
+	width: 50%;
 	text-align: center;
-	line-height: 50px;
 }
 
-.list-container {
-	height: calc( 100% - 50px);
-	width: 100%;
-	overflow-y: auto;
-	background-color: #ccc;
+header .header-container .title-container .title {
+	line-height: 27px;
+	color: #C4C4C4;
+	font-size: 16px;
+	margin-top: 44px;
 }
 
-.item {
-	width: calc( 100% - 5px);
-	height: auto;
-	min-height: 40px;
-	line-height: 40px;
-	padding-left: 5px;
-	border-bottom: 1px solid black;
-	cursor: pointer;
-	display: block;
+header .header-container .user-container {
+	width: 30%;
+	float: right;
+	display: inline-block;
 }
 
-.item:hover {
+header .header-container .user-container .avatar-container {
+	height: 100%;
+	margin-top: 40px;
+	margin-left: 20px;
+}
+
+header .header-container .user-container .avatar-container .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
 	background-color: grey;
+	float: left;
 }
 
-footer {
+header .header-container .user-container .fio-container {
+	height: 100%;
+	float: right;
+	line-height: 120px;
+	margin-right: 70px;
+}
+
+/**/
+
+/*user-card*/
+
+.user-card {
+	height: 130px;
 	width: 100%;
-	height: 5vh;
 }
 
-footer button {
+.user-card .card-left, .user-card .card-right {
+	display: inline-block;
+}
+
+.user-card .card-left {
+	width: 450px;
+	height: 100%;
+}
+
+.user-card .card-left .card-avatar-container, .user-card .card-left .card-personal-data {
+	display: inline-block;
+}
+
+.user-card .card-left .card-avatar-container {
+	width: 100px;
+	height: 100%;
+	text-align: center;
+}
+
+.user-card .card-left .card-avatar-container img {
+	width: 90px;
+	height: 90px;
+	background-color: grey;
+	border-radius: 50%;
+	margin-top: 20px;
+}
+
+.user-card .card-left .card-personal-data {
+	width: 350px;
+	height: 100%;
+	float: right;
+}
+
+.user-card .card-left .card-personal-data .card-fio {
+	height: 50%;
+	line-height: 95px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.user-card .card-left .card-personal-data .card-position {
+	height: 50%;
+	line-height: 35px;
+	padding-left: 20px;
+}
+
+
+.user-card .card-right {
+	width: 450px;
+	float: right;
+	height: 100%;
+	background: #F9F9F9;
+	border-radius: 5px;
+}
+
+.user-card .card-right div {
+	display: inline-block;
+}
+
+.user-card .card-right .card-info {
+	width: 350px;
+	height: 100%;
+}
+
+.user-card .card-right .card-info p {
+	color: #C4C4C4;
+	display: block;
+	height: 50%;
+	padding-left: 10px;
+}
+
+.user-card .card-right .card-info .card-department {
+	display: flex;
+    align-items: flex-end;
+}
+
+.user-card .card-right .card-info .card-faculty {
+	line-height: 40px;
+}
+
+.user-card .card-right .cab-count {
+	width: 100px;
+	float: right;
+	height: 100%;
+	text-align: center;
+	line-height: 130px;
+}
+
+.user-card .card-right .cab-count p {
+	color: #5ADB6F;
+}
+
+/**/
+
+/*main*/
+
+main {
+	width: 900px;
+	height: auto;
+	padding: 50px 0;
+	margin-left: calc( 50% - 450px );
+}
+
+main .title-instruction {
+	padding: 50px 0;
+	width: 100%;
+	text-align: left;
+	font-size: 64px;
+	font-weight: bold;
+	color: #EEEEEE;
+}
+
+main .main-content {
+	width: 100%;
+	height: auto;
+}
+
+main .main-content .top-content {
+	width: 100%;
+	height: auto;
+}
+
+main .main-content .top-content * {
+	height: 300px;
+	display: inline-block;
+	width: 49.8%;
+	cursor: pointer;
+}
+
+main .main-content .top-content *:hover {
+	opacity: 0.9;
+}
+
+main .main-content .top-content .main-regulations {
+	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	border-radius: 4px;
+	position: relative;
+}
+
+main .main-content .top-content .main-regulations .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .main-regulations .card-img img {
+	padding: 35px;
+	width: 50px;
+	height: 65px;
+}
+
+main .main-content .top-content .main-regulations .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .main-regulations .card-title p {
+	font-size: 36px;
+	line-height: 40px;
+	padding-left: 35px;
 	width: 100%;
 	height: 100%;
-	font-size: 18px;
-	border: none;
-	background-color: #84DCC6;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .top-content .active-tasks {
+	background: linear-gradient(125.38deg, #5ADB6F 19.12%, #68E48B 86.53%);
+	border-radius: 4px;
+	float: right;
+	position: relative;
+}
+
+main .main-content .top-content .active-tasks:after {
+	content: '2';
+	height: 50px;
+	width: 50px;
+	background-color: #47F98A;
+	position: absolute;
+	right: 30px;
+	top: 30px;
+	border-radius: 50%;
+	color: white;
+	text-align: center;
+	line-height: 50px;
+	font-size: 27px;
+}
+
+main .main-content .top-content .active-tasks .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .active-tasks .card-img img {
+	padding: 35px;
+	width: 50px;
+	height: 65px;
+}
+
+main .main-content .top-content .active-tasks .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .top-content .active-tasks .card-title p {
+	font-size: 36px;
+	line-height: 40px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content {
+	width: 100%;
+	height: auto;
+	margin-top: 3px;
+}
+
+main .main-content .bottom-content div {
+	display: inline-block;
 	cursor: pointer;
 }
 
-footer button:hover {
-	background-color: #84CCD6;
+main .main-content .bottom-content div:hover {
+	opacity: 0.9;
 }
+
+main .main-content .bottom-content .job-responsibilities {
+	height: 230px;
+	width: 300px;
+	background: linear-gradient(123.65deg, #52C3D4 19.12%, #60DBDB 86.53%);
+	border-radius: 4px;
+	float: left;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-img img {
+	padding: 35px;
+	width: 40px;
+	height: 55px;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .job-responsibilities .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content .documents {
+	height: 230px;
+	width: 320px;
+	background: linear-gradient(304.21deg, #FBD642 20.06%, #FFC32A 78.71%);
+	border-radius: 4px;
+	margin-left: 3px;
+}
+
+main .main-content .bottom-content .documents .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .documents .card-img img {
+	padding: 35px;
+	width: 55px;
+	height: 55px;
+}
+
+main .main-content .bottom-content .documents .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .documents .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+main .main-content .bottom-content .institute-structure {
+	height: 230px;
+	float: right;
+	width: 272px;
+	background: linear-gradient(115.74deg, #6796FC 19.12%, #6BB7FC 86.53%);
+	border-radius: 4px;
+}
+
+main .main-content .bottom-content .institute-structure .card-img {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .institute-structure .card-img img {
+	padding: 35px;
+	width: 65px;
+	height: 35px;
+}
+
+main .main-content .bottom-content .institute-structure .card-title {
+	height: 50%;
+	width: 100%;
+}
+
+main .main-content .bottom-content .institute-structure .card-title p {
+	font-size: 23px;
+	line-height: 30px;
+	padding-left: 35px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	font-weight: bold;
+}
+
+/**/
+
+/*generalities*/
+
+main .generalities-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+main .generalities-content div {
+	display: inline-block;
+	height: 100%;
+}
+
+main .generalities-content .generalities-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .generalities-content .generalities-left .arrow-back {
+	padding: 40px;
+	display: block;
+	cursor: pointer;
+}
+
+main .generalities-content .generalities-left .generalities-left-content {
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+}
+
+main .generalities-content .generalities-left .generalities-left-content p {
+	display: block;
+	padding: 20px;
+}
+
+main .generalities-content .generalities-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .generalities-content .generalities-right .generalities-right-content {
+	height: auto;
+}
+
+main .generalities-content .generalities-right .generalities-right-content .generalities-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+main .generalities-content .generalities-right .generalities-right-content .list-description {
+	padding-left: 25px;
+}
+
+main .generalities-content .generalities-right .generalities-right-content .list-description li {
+	list-style-type: disc;
+	padding-bottom: 10px;
+}
+
+/**/
+
+/*tasks*/
+
+main .tasks-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+}
+
+main .tasks-content .tasks-left, main .tasks-content .tasks-right {
+	display: inline-block;
+	height: 100%;
+}
+
+main .tasks-content .tasks-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .tasks-content .tasks-left .task-list {
+	height: auto;
+}
+
+main .tasks-content .tasks-left .task-list .task-item {
+	width: 70%;
+	height: 50px;
+	border-bottom: 1px solid black;
+	margin-left: 10%;
+	line-height: 50px;
+	cursor: pointer;
+	padding-left: 20px;
+}
+
+main .tasks-content .tasks-left .task-list .task-item:hover {
+	background-color: #D4F4F4;
+}
+
+main .tasks-content .tasks-left .task-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+	width: 100%;
+}
+
+main .tasks-content .tasks-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .tasks-content .tasks-right .active-list {
+	height: auto;
+}
+
+main .tasks-content .tasks-right .active-list .active-item {
+	height: auto;
+	width: 70%;
+	margin-left: 10%;
+	border-bottom: 1px solid black;
+	padding-left: 20px;
+}
+
+main .tasks-content .tasks-right .active-list .active-item .item-title {
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 5px;
+}
+
+main .tasks-content .tasks-right .active-list .active-item .item-documents a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-left: 20px;
+}
+
+main .tasks-content .tasks-right .tasks-right-content {
+	height: auto;
+}
+
+main .tasks-content .tasks-right .active-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+
+/**/
+
+/*footer*/
+
+footer {
+	width: 900px;
+	height: 150px;
+	margin-left: calc( 50% - 450px );
+	padding-bottom: 50px;
+}
+
+footer div {
+	display: inline-block;
+}
+
+footer .footer-left {
+	width: 300px;
+	height: 100%;
+	line-height: 21px;
+	align-items: center;
+	font-size: 14px;
+}
+
+footer .footer-left .left-content {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+footer .footer-right {
+	width: 600px;
+	height: 100%;
+	float: right;
+	background-color: #F4F4F4;
+	border-radius: 5px;
+}
+
+footer .footer-right div {
+	display: inline-block;
+}
+
+footer .footer-right .curator-info {
+	width: 320px;
+	float: left;
+	height: 100%;
+}
+
+footer .footer-right .curator-info .info-content {
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	line-height: 20px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+footer .footer-right .arrow {
+	width: 20px;
+	height: 100%;
+	text-align: center;
+}
+
+footer .footer-right .arrow img {
+	width: 17px;
+	height: 17px;
+	margin-top: 67px;
+}
+
+footer .footer-right .curator-data {
+	width: 260px;
+	float: right;
+	height: 100%;
+}
+
+footer .footer-right .curator-data .data-content {
+	font-weight: bold;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	line-height: 25px;
+	padding-left: 30px;
+}
+
+/**/
