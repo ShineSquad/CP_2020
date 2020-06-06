@@ -1,1 +1,1 @@
-Сайт разработан на на чистых языках html, css, javascript, php.
+Сайт разработан на чистых языках html, css, javascript, php.
