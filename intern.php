@@ -14,16 +14,18 @@
 						Сделать мне кофе
 					</div>
 					<?php
-						$sql = "SELECT * FROM tasks";
+						$sql = "SELECT * FROM tasks WHERE to_id=$user_id";
 						$result = mysqli_query($link, $sql);
 						while ($row = mysqli_fetch_assoc($result)) {
 							$id = $row['id'];
 							$title = $row['title'];
-							echo "
-								<div class='item' id='$id'>
-									$title
-								</div>
-							";
+
+							$out = "<form method='GET'>
+								<input type='text' name='task_id' value='$id' style='display:none'>
+								<input type='submit' name='see_task' value='$title'>
+							</form>";
+
+							echo $out;
 						}
 					?>
 				</div>
@@ -34,6 +36,36 @@
 				</div>
 				<div class="active-tasks-container">
 					<div class="active-item">
+						<?php
+							if (isset($_GET["see_task"])) {
+								$id = $_GET["task_id"];
+
+								$sql = "SELECT * FROM tasks WHERE id=$id";
+								$result = mysqli_query($link, $sql);
+								while ($row = mysqli_fetch_assoc($result)) {
+									$title = $row["title"];
+									$description = $row["description"];
+
+									echo "<div class='item-title'>$title</div>";
+									echo "<div class='item-description'>$description</div>"
+								}
+
+								echo "<div class='item-documents'>";
+								
+								$sql = "SELECT instructions.* FROM task_instructions
+										INNER JOIN instructions
+										ON task_instructions.instruction_id = instructions.id";
+								$result = mysqli_query($link, $sql);
+								while ($row = mysqli_fetch_assoc($result)) {
+									$d_link = $row["link"];
+									$d_name = $row["name"];
+
+									echo "<a href='$d_link' download>$d_name</a>"
+								}
+
+								echo "</div>";
+							}
+						?>
 						<div class="item-title">Название</div>
 						<div class="item-description">Описание Описание ОписаниеОписаниеОписаниеОписание Описание ОписаниеОписаниеОписаниеОписание Описание Описание Описание Описание</div>
 						<div class="item-documents">
