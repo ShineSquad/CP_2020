@@ -1,7 +1,7 @@
 <div class="user-card">
 	<div class="card-left">
 		<div class="card-avatar-container">
-			<img src="" class="card">
+			<?php echo "<img src='$avatar' class='card'>"?>
 		</div>
 		<div class="card-personal-data">
 			<?php

@@ -3,6 +3,7 @@
 	if (isset($_GET["uid"])) {
 		$uid = $_GET["uid"];
 	}
+	require "debug/img.php";
 ?>
 
 <script type="text/javascript">
@@ -47,7 +48,7 @@
 		</div>
 		<div class="user-container">
 			<div class="avatar-container">
-				<img src="" class="avatar">
+				<?php echo "<img src='$avatar' class='avatar'>"?>
 			</div>
 			<div class="fio-container">
 				<p class="fio">
