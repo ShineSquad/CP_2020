@@ -24,3 +24,17 @@ function apply_task(event) {
 
 	window.location.href = base + get;
 } 
+
+function change_docs(id) {
+	var base = "supervisor.php?",
+		get  = "change_docs=1&intern_id=" + id;
+
+	window.location.href = base + get;
+}
+
+function change_user(id) {
+	var base = (user_type == 2) ? "supervisor.php?" : "intern.php?",
+		get = "change_user=1&users=" + id;
+
+	window.location.href = base + get;
+}

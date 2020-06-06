@@ -66,6 +66,7 @@ $t_list = [
 	"menthors",
 	"task_instructions",
 	"tasks",
+	"users_position",
 	"position_instructions",
 	"users",
 	"instructions",

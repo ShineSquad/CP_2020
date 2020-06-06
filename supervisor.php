@@ -53,10 +53,30 @@
 				</div>
 				<div class="check-container">
 					<?php
-						$position = 0;
+						$position = 1;
 						if (isset($_GET["change_position"])) {
 							$position = $_GET["position"];
 						}
+						if (isset($_GET["change_docs"])) {
+							$intern_id = $_GET["intern_id"];
+
+							$sql = "SELECT * FROM users_position WHERE user_id=$intern_id";
+							$result = mysqli_query($link, $sql);
+
+							while ($row = mysqli_fetch_assoc($result)) {
+								$position = $row["position_id"];
+							}
+						}
+
+							$sql = "SELECT * FROM positions WHERE id=$position";
+							$result = mysqli_query($link, $sql);
+							if ($result) {
+								while ($row = mysqli_fetch_assoc($result)) {
+									$pos_name = $row["name"];
+								}
+								echo $pos_name;
+							}
+							
 						$sql = "SELECT instructions.* FROM instructions
 								INNER JOIN position_instructions
 								ON instructions.id = position_instructions.instruction_id
@@ -86,22 +106,27 @@
 								INNER JOIN menthors ON users.id=menthors.supervisor WHERE menthors.supervisor=$user_id";
 						$interns = array();
 						$result = mysqli_query($link, $sql);
-						while ($row = mysqli_fetch_assoc($result)) {
-							$interns[] = $row["intern"];
+						if ($result) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								$interns[] = $row["intern"]; }
 						}
-
+						
 						$sql = "SELECT * FROM users WHERE id IN (" . implode(",", $interns) . ")";
 						$result = mysqli_query($link, $sql);
-						while ($row = mysqli_fetch_assoc($result)) {
-							$id = $row['id'];
-							$name = $row['name'];
-							$node_id="f_".$id;
-							echo "
-								<label for='$node_id' class='item' id='$id'>
-									$name
-									<input id='$node_id' type='radio' name='intern' value='$id'/>
-								</label>
-							";
+
+						if ($result) {
+							while ($row = mysqli_fetch_assoc($result)) {
+								$id = $row['id'];
+								$name = $row['name'];
+								$node_id="f_".$id;
+								echo "
+									<label for='$node_id' class='item' id='$id'>
+										$name
+										<input id='$node_id' type='radio' name='intern' value='$id'
+										oninput='change_docs($id)'/>
+									</label>
+								";
+							}
 						}
 					?>
 				</div>

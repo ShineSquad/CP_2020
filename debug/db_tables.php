@@ -18,6 +18,8 @@
 		}
 	}
 ?>
+
+<?php require "nav.php";?>
 <form method="GET">
 	<input type="submit" name="create" value="Create tables">
 	<input type="submit" name="remove" value="Remove tables">
