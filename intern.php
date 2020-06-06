@@ -47,7 +47,7 @@
 									$description = $row["description"];
 
 									echo "<div class='item-title'>$title</div>";
-									echo "<div class='item-description'>$description</div>"
+									echo "<div class='item-description'>$description</div>";
 								}
 
 								echo "<div class='item-documents'>";
@@ -60,7 +60,7 @@
 									$d_link = $row["link"];
 									$d_name = $row["name"];
 
-									echo "<a href='$d_link' download>$d_name</a>"
+									echo "<a href='$d_link' download>$d_name</a>";
 								}
 
 								echo "</div>";
