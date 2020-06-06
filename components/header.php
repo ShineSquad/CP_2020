@@ -12,6 +12,10 @@
 <header>
 	<div class="changemenu">
 		<div class="view" id="view" value="0">
+			<div class="links">
+				<a href="./intern.php">Стажеры</a>
+				<a href="./supervisor.php">Руководители</a>
+			</div>
 			<select name="users" class="users" onchange="change_user(this.value)" autocomplete="off">
 				<option selected disabled>Пользователь</option>
 				<?php

@@ -13,14 +13,25 @@ header .changemenu {
 }
 
 header .changemenu .view select {
-	width: 150px;
-	height: 100%;
+	width: 200px;
+	height: 70%;
 	outline: none;
 	border: none;
 }
 
+header .changemenu .view .links {
+	height: 30%;
+}
+
+header .changemenu .view .links a {
+	text-decoration: none;
+	color: black;
+	padding-left: 5px;
+}
+
 header .changemenu .view {
 	height: 0;
+	overflow: hidden;
 }
 
 header .changemenu .triangle {
@@ -31,9 +42,9 @@ header .changemenu .triangle::after {
     content: ''; 
     position: absolute; /* Абсолютное позиционирование */
     border: 10px solid transparent; /* Прозрачные границы */
-    border-top: 10px solid green; /* Добавляем треугольник */
+    border-top: 10px solid #5ADB6F; /* Добавляем треугольник */
     cursor: pointer;
-	left: 65px;
+	left: 85px;
 }
 
 header .header-container {

@@ -43,7 +43,7 @@ function change_select() {
 	var view = document.getElementById("view"),
 		change = view.getAttribute("value");
 	if (change == 0) {
-		view.style.height = "30px";
+		view.style.height = "60px";
 		view.setAttribute("value", 1);
 	} else {
 		view.style.height = "0px";
