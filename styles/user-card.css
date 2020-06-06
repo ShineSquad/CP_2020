@@ -1,0 +1,96 @@
+.user-card {
+	height: 130px;
+	width: 100%;
+}
+
+.user-card .card-left, .user-card .card-right {
+	display: inline-block;
+}
+
+.user-card .card-left {
+	width: 450px;
+	height: 100%;
+}
+
+.user-card .card-left .card-avatar-container, .user-card .card-left .card-personal-data {
+	display: inline-block;
+}
+
+.user-card .card-left .card-avatar-container {
+	width: 100px;
+	height: 100%;
+	text-align: center;
+}
+
+.user-card .card-left .card-avatar-container img {
+	width: 90px;
+	height: 90px;
+	background-color: grey;
+	border-radius: 50%;
+	margin-top: 20px;
+}
+
+.user-card .card-left .card-personal-data {
+	width: 350px;
+	height: 100%;
+	float: right;
+}
+
+.user-card .card-left .card-personal-data .card-fio {
+	height: 50%;
+	line-height: 95px;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+.user-card .card-left .card-personal-data .card-position {
+	height: 50%;
+	line-height: 35px;
+	padding-left: 20px;
+}
+
+
+.user-card .card-right {
+	width: 450px;
+	float: right;
+	height: 100%;
+	background: #F9F9F9;
+	border-radius: 5px;
+}
+
+.user-card .card-right div {
+	display: inline-block;
+}
+
+.user-card .card-right .card-info {
+	width: 350px;
+	height: 100%;
+}
+
+.user-card .card-right .card-info p {
+	color: #C4C4C4;
+	display: block;
+	height: 50%;
+	padding-left: 10px;
+}
+
+.user-card .card-right .card-info .card-department {
+	display: flex;
+    align-items: flex-end;
+}
+
+.user-card .card-right .card-info .card-faculty {
+	line-height: 40px;
+}
+
+.user-card .card-right .cab-count {
+	width: 100px;
+	float: right;
+	height: 100%;
+	text-align: center;
+	line-height: 130px;
+}
+
+.user-card .card-right .cab-count p {
+	color: #5ADB6F;
+}

@@ -1,0 +1,58 @@
+main .institute-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+main .institute-content .institute-left .institute-title, main .institute-content .institute-right .institute-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+main .institute-content .institute-left, main .institute-content .institute-right {
+	display: inline-block;
+	height: 100%;
+}
+
+main .institute-content .institute-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .institute-content .institute-left .arrow-back {
+	padding: 30px;
+	display: block;
+	cursor: pointer;
+}
+
+main .institute-content .institute-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .institute-content .list-item {
+	height: auto;
+}
+
+main .institute-content .list-item * {
+	padding-left: 30px;
+}
+
+main .institute-content .list-item .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+main .institute-content .list-item li {
+	padding-left: 35px;
+	padding-top: 5px;
+}
