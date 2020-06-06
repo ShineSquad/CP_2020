@@ -18,10 +18,10 @@
 	$p  = $pos[$rp];
 
 	$user_type = 2;
-	if (isset($_GET["super"]))  { $user_type = 2; }
-	if (isset($_GET["intern"])) { $user_type = 3; }
+	if (isset($_GET["add_super"]))  { $user_type = 2; }
+	if (isset($_GET["add_intern"])) { $user_type = 3; }
 
-	if (isset($_GET["intern"]) || isset($_GET["super"])) {
+	if (isset($_GET["add_intern"]) || isset($_GET["add_super"])) {
 		$sql = "INSERT INTO users (id, name, role_id)
 				VALUES (NULL, '$n', $user_type)";
 		mysqli_query($link, $sql);
@@ -54,8 +54,8 @@
 <?php require "nav.php";?>
 
 <form method="GET">
-	<input type="submit" name="super"  value="Add supervisor">
-	<input type="submit" name="intern" value="Add intern">
+	<input type="submit" name="add_super"  value="Add supervisor">
+	<input type="submit" name="add_intern" value="Add intern">
 </form>
 
 <form method="GET">

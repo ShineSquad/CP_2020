@@ -1,68 +1,46 @@
 <?php 
 	require "db_link.php";
 
+	$sql = "SELECT instructions.* FROM instructions";
+	$result = mysqli_query($link, $sql);
+	$instructions = array();
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		$instructions[] = $row["id"];
+	}
+
 	if (isset($_GET["inst_pos"])) {
-		$pos = $_GET["position"];
-		$sql = "INSERT INTO position_instructions (id, instruction_id, position_id) VALUES ";
+		$sql = "SELECT * FROM positions";
+		$result = mysqli_query($link, $sql);
 
-		$values = array();
+		while ($row = mysqli_fetch_assoc($result)) {
+			$id = $row["id"];
+			$count = rand(3,15);
 
-		foreach ($_GET as $key => $value) {
-			if (preg_match("/instr_/", $key)) {
-				$values[] = "(NULL, $value, $pos)";
+			$sql = "INSERT INTO position_instructions (id, instruction_id, position_id) VALUES ";
+			$values = [];
+			while ($count) {
+				$i = -1;
+				while ($i == -1) {
+					$r = rand(0, count($instructions)-1);
+					if (isset($instructions[$r])) {
+						$i = $instructions[$r];
+						unset($instructions[$r]);
+					}
+				}
+
+				$values[] = "(NULL, $i, $id)";
+				$count--;
 			}
-		}
 
-		$sql .= implode(",", $values);
-		// echo $sql;
-		mysqli_query($link, $sql);
+			$sql .= implode(",", $values);
+			mysqli_query($link, $sql);
+		}
 	}
 ?>
 
 <?php require "nav.php";?>
 
 <form method="GET">
-	<table>
-		<tr>
-			<td>position</td>
-			<td>instructions</td>
-		</tr>
-		<tr>
-			<td>
-				<select name="position">
-					<?php
-						$sql = "SELECT * FROM positions";
-						$result = mysqli_query($link, $sql);
-
-
-						while ($row = mysqli_fetch_assoc($result)) {
-							$id = $row["id"];
-							$name = $row["name"];
-							$out = "<option value='$id'>$name</option>";
-							echo $out;
-						}
-					?>
-				</select>
-			</td>
-			<td>
-				<div style="height: 200px; overflow-y: auto;">
-					<?php
-						$sql = "SELECT instructions.* FROM instructions";
-						$result = mysqli_query($link, $sql);
-
-
-						while ($row = mysqli_fetch_assoc($result)) {
-							$id = $row["id"];
-							$name = $row["name"];
-							$get_name = "instr_" . $id;
-							$out = "<input type='checkbox' name='$get_name' value='$id'>$name<br>";
-							echo $out;
-						}
-					?>
-				</div>
-			</td>
-		</tr>
-	</table>
-
 	<input type="submit" name="inst_pos" value="Add instructions to position">
 </form>
