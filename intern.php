@@ -19,6 +19,7 @@
 						while ($row = mysqli_fetch_assoc($result)) {
 							$id = $row['id'];
 							$title = $row['title'];
+							echo $id;
 
 							$out = "<form method='GET'>
 								<input type='text' name='task_id' value='$id' style='display:none'>
@@ -55,7 +56,10 @@
 								
 								$sql = "SELECT instructions.* FROM task_instructions
 										INNER JOIN instructions
-										ON task_instructions.instruction_id = instructions.id";
+										ON task_instructions.instruction_id = instructions.id
+										WHERE task_instructions.task_id = $id";
+
+								echo $sql;
 								$result = mysqli_query($link, $sql);
 								while ($row = mysqli_fetch_assoc($result)) {
 									$d_link = $row["link"];

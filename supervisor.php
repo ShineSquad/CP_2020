@@ -13,7 +13,7 @@
 				</div>
 				<div class="list-container">
 					<?php
-						$sql = "SELECT * FROM tasks";
+						$sql = "SELECT * FROM tasks WHERE status=0";
 						$result = mysqli_query($link, $sql);
 						while ($row = mysqli_fetch_assoc($result)) {
 							$id = $row['id'];
@@ -119,11 +119,15 @@
 								$id = $row['id'];
 								$name = $row['name'];
 								$node_id="f_".$id;
+								$selected = "";
+								if (isset($intern_id) && $intern_id == $id) $selected = "checked";
+
 								echo "
 									<label for='$node_id' class='item' id='$id'>
 										$name
 										<input id='$node_id' type='radio' name='intern' value='$id'
-										oninput='change_docs($id)'/>
+										oninput='change_docs($id)'
+										$selected />
 									</label>
 								";
 							}
@@ -144,7 +148,7 @@
 		$task = $_GET["task"];
 		$intern = $_GET["intern"];
 
-		$sql = "UPDATE tasks SET from_id=$user_id, to_id=$intern WHERE id=$task";
+		$sql = "UPDATE tasks SET from_id=$user_id, to_id=$intern, status=1 WHERE id=$task";
 		mysqli_query($link, $sql);
 
 		$sql = "INSERT INTO task_instructions (id, task_id, instruction_id)
@@ -158,6 +162,7 @@
 		}
 		
 		$sql .= implode(",", $values);
+		echo $sql;
 		mysqli_query($link, $sql);
 	}
 ?>
