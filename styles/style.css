@@ -12,6 +12,37 @@ header {
 	width: 100%;
 	background-color: white;
 	box-shadow: 0px 3px 10px rgba(148, 148, 148, 0.15);
+	position: relative;
+}
+
+header .changemenu {
+	position: absolute;
+	top: 0;
+	left: calc(50% - 100px);
+}
+
+header .changemenu .view select {
+	width: 150px;
+	height: 100%;
+	outline: none;
+	border: none;
+}
+
+header .changemenu .view {
+	height: 0;
+}
+
+header .changemenu .triangle {
+	position: relative;
+}
+
+header .changemenu .triangle::after {
+    content: ''; 
+    position: absolute; /* Абсолютное позиционирование */
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid green; /* Добавляем треугольник */
+    cursor: pointer;
+	left: 65px;
 }
 
 header .header-container {
@@ -492,6 +523,7 @@ main .tasks-content {
 	margin-left: calc( 50% - 450px );
 	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
+	display: none;
 }
 
 main .tasks-content .tasks-left, main .tasks-content .tasks-right {
@@ -509,14 +541,23 @@ main .tasks-content .tasks-left .task-list {
 	height: auto;
 }
 
+main .tasks-content .tasks-left .arrow-back {
+	padding: 30px;
+	display: block;
+	cursor: pointer;
+}
+
 main .tasks-content .tasks-left .task-list .task-item {
 	width: 70%;
 	height: 50px;
-	border-bottom: 1px solid black;
 	margin-left: 10%;
 	line-height: 50px;
 	cursor: pointer;
 	padding-left: 20px;
+	border: none;
+	border-bottom: 1px solid black;
+	background-color: #F4F4F4;
+	text-align: left;
 }
 
 main .tasks-content .tasks-left .task-list .task-item:hover {
@@ -555,6 +596,7 @@ main .tasks-content .tasks-right .active-list .active-item .item-title {
 	font-weight: bold;
 	font-size: 18px;
 	padding-bottom: 5px;
+	padding-top: 5px;
 }
 
 main .tasks-content .tasks-right .active-list .active-item .item-documents a {
@@ -562,7 +604,20 @@ main .tasks-content .tasks-right .active-list .active-item .item-documents a {
 	color: white;
 	text-decoration: none;
 	padding-top: 10px;
-	padding-left: 20px;
+	padding-left: 25px;
+	padding-bottom: 5px;
+	position: relative;
+}
+
+main .tasks-content .tasks-right .active-list .active-item .item-documents a:before {
+	content: '';
+	background: url(./icons/docs.png);
+	background-size: cover;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 0;
+	top: 7px;
 }
 
 main .tasks-content .tasks-right .tasks-right-content {
@@ -575,6 +630,194 @@ main .tasks-content .tasks-right .active-title {
 	font-size: 20px;
 }
 
+/**/
+
+/*responsibilities-content*/
+
+main .responsibilities-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+main .responsibilities-content .responsibilities-left .responsibilities-title, main .responsibilities-content .responsibilities-right .responsibilities-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+main .responsibilities-content .responsibilities-left, main .responsibilities-content .responsibilities-right {
+	display: inline-block;
+	height: 100%;
+}
+
+main .responsibilities-content .responsibilities-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .responsibilities-content .responsibilities-left .arrow-back {
+	padding: 30px;
+	display: block;
+	cursor: pointer;
+}
+
+main .responsibilities-content .responsibilities-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .responsibilities-content .list-item {
+	height: auto;
+}
+
+main .responsibilities-content .list-item * {
+	padding-left: 30px;
+}
+
+main .responsibilities-content .list-item .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+main .responsibilities-content .list-item li {
+	padding-left: 35px;
+	padding-top: 5px;
+}
+
+/**/
+
+/*documents-content*/
+
+main .documents-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+main .documents-content .documents-left .documents-title, main .documents-content .documents-right .documents-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+main .documents-content .documents-left, main .documents-content .documents-right {
+	display: inline-block;
+	height: 100%;
+}
+
+main .documents-content .documents-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .documents-content .documents-left .arrow-back {
+	padding: 30px;
+	display: block;
+	cursor: pointer;
+}
+
+main .documents-content .documents-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .documents-content .list-item {
+	height: auto;
+}
+
+main .documents-content .list-item * {
+	padding-left: 30px;
+}
+
+main .documents-content .list-item .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+main .documents-content .list-item li {
+	padding-left: 35px;
+	padding-top: 5px;
+}
+
+/**/
+
+/*institute-content*/
+
+main .institute-content {
+	width: 900px;
+	height: 620px;
+	margin-left: calc( 50% - 450px );
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	display: none;
+}
+
+main .institute-content .institute-left .institute-title, main .institute-content .institute-right .institute-title {
+	font-weight: bold;
+	padding: 25px;
+	font-size: 20px;
+}
+
+main .institute-content .institute-left, main .institute-content .institute-right {
+	display: inline-block;
+	height: 100%;
+}
+
+main .institute-content .institute-left {
+	width: 360px;
+	background-color: #F4F4F4;
+	border-radius: 4px;
+}
+
+main .institute-content .institute-left .arrow-back {
+	padding: 30px;
+	display: block;
+	cursor: pointer;
+}
+
+main .institute-content .institute-right {
+	width: 540px;
+	float: right;
+	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	border-radius: 4px;
+	color: white;
+	overflow-y: auto;
+}
+
+main .institute-content .list-item {
+	height: auto;
+}
+
+main .institute-content .list-item * {
+	padding-left: 30px;
+}
+
+main .institute-content .list-item .title {
+	font-size: 20px;
+	font-weight: bold;
+}
+
+main .institute-content .list-item li {
+	padding-left: 35px;
+	padding-top: 5px;
+}
 
 /**/
 
@@ -603,7 +846,7 @@ footer .footer-left .left-content {
 	display: flex;
 	align-items: center;
 	height: 100%;
-}
+}	
 
 footer .footer-right {
 	width: 600px;

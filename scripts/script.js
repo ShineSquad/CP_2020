@@ -38,3 +38,15 @@ function change_user(id) {
 
 	window.location.href = base + get;
 }
+
+function change_select() {
+	var view = document.getElementById("view"),
+		change = view.getAttribute("value");
+	if (change == 0) {
+		view.style.height = "30px";
+		view.setAttribute("value", 1);
+	} else {
+		view.style.height = "0px";
+		view.setAttribute("value", 0);
+	}
+}

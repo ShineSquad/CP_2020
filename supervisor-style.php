@@ -32,6 +32,19 @@
 			main.style.display = "none";
 			tasks.style.display = "block";
 		}
+
+		function change_select() {
+			var view = document.getElementById("view"),
+				change = view.getAttribute("value");
+			if (change) {
+				view.style.height = "30px";
+				view.setAttribute("value", true);
+			} else {
+				view.style.height = "0px";
+				view.setAttribute("value", false);
+			}
+
+		}
 	</script>
 </head>
 <body>
@@ -175,4 +188,4 @@
 	</main>
 	<?php require"./components/footer-style.htm"?>
 </body>
-</html>
+</html> 
