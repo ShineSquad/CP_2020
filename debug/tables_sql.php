@@ -9,6 +9,14 @@ $tables[] = '{
 	"primary_key": "id"
 }';
 $tables[] = '{
+	"name": "positions",
+	"columns": {
+		"id":   "INT AUTO_INCREMENT",
+		"name": "TEXT NOT NULL"
+	},
+	"primary_key": "id"
+}';
+$tables[] = '{
 	"name": "instructions",
 	"columns": {
 		"id":   "INT AUTO_INCREMENT",
@@ -34,11 +42,11 @@ $tables[] = '{
 	}
 }';
 $tables[] = '{
-	"name": "roles_instructions",
+	"name": "position_instructions",
 	"columns": {
 		"id":             "INT AUTO_INCREMENT",
 		"instruction_id": "INT NOT NULL",
-		"role_id":        "INT NOT NULL"
+		"position_id":    "INT NOT NULL"
 	},
 	"primary_key": "id",
 	"foreign_keys": {
@@ -48,8 +56,8 @@ $tables[] = '{
 			"options": "ON DELETE CASCADE"
 		},
 		"1": {
-			"column": "role_id",
-			"ref":    "roles(id)",
+			"column": "position_id",
+			"ref":    "positions(id)",
 			"options": "ON DELETE CASCADE"
 		}
 	}

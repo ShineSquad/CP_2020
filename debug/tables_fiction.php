@@ -25,4 +25,15 @@
 
 		mysqli_query($link, $sql);
 	}
+
+	$positions = ["Токарь", "Бухгалтер", "Кабельщик", "Секретарь", "Дворник"];
+
+	$sql = "INSERT INTO positions (id, name) VALUES ";
+	$arr = array();
+	foreach ($positions as $key => $value) {
+		$arr[] = "(NULL, '$value')";
+	}
+
+	$sql .= implode(",", $arr);
+	mysqli_query($link, $sql);
 ?>

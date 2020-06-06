@@ -63,11 +63,13 @@ function JSONtoTABLE($db_link, $JSONstr) {
 };
 
 $t_list = [
+	"menthors",
 	"task_instructions",
 	"tasks",
-	"roles_instructions",
+	"position_instructions",
 	"users",
 	"instructions",
-	"roles"
+	"roles",
+	"positions"
 ];
 ?>

@@ -17,9 +17,74 @@
 				VALUES (NULL, '$n', 3)";
 		mysqli_query($link, $sql);
 	}
+
+	if (isset($_GET["super_intern"])) {
+		$super = $_GET["super"];
+		$sql = "INSERT INTO menthors (id, supervisor, intern) VALUES ";
+
+		$values = array();
+
+		foreach ($_GET as $key => $value) {
+			if (preg_match("/intern_/", $key)) {
+				$values[] = "(NULL, $super, $value)";
+			}
+		}
+
+		$sql .= implode(",", $values);
+
+		mysqli_query($link, $sql);
+	}
 ?>
 
 <form method="GET">
 	<input type="submit" name="super"  value="Add supervisor">
 	<input type="submit" name="intern" value="Add intern">
+</form>
+
+<form method="GET">
+	<table>
+		<tr>
+			<td>super</td>
+			<td>intern</td>
+		</tr>
+		<tr>
+			<td>
+				<select name="super">
+					<?php
+						$sql = "SELECT * FROM users
+								WHERE role_id=2";
+						$result = mysqli_query($link, $sql);
+
+
+						while ($row = mysqli_fetch_assoc($result)) {
+							$id = $row["id"];
+							$name = $row["name"];
+							$out = "<option value='$id'>$name</option>";
+							echo $out;
+						}
+					?>
+				</select>
+			</td>
+			<td>
+				<?php
+					$sql = "SELECT users.* FROM users
+							LEFT JOIN menthors ON users.id = menthors.intern
+							WHERE menthors.intern IS NULL
+							AND users.role_id=3";
+					$result = mysqli_query($link, $sql);
+
+
+					while ($row = mysqli_fetch_assoc($result)) {
+						$id = $row["id"];
+						$name = $row["name"];
+						$get_name = "intern_" . $id;
+						$out = "<input type='checkbox' name='$get_name' value='$id'>$name<br>";
+						echo $out;
+					}
+				?>
+			</td>
+		</tr>
+	</table>
+
+	<input type="submit" name="super_intern" value="Add interns to super">
 </form>
