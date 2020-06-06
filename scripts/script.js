@@ -34,7 +34,7 @@ function change_docs(id) {
 
 function change_user(id) {
 	var base = (user_type == 2) ? "supervisor.php?" : "intern.php?",
-		get = "change_user=1&users=" + id;
+		get = "uid=" + id;
 
 	window.location.href = base + get;
 }

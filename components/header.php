@@ -1,3 +1,10 @@
+<?php
+	$uid = 1;
+	if (isset($_GET["uid"])) {
+		$uid = $_GET["uid"];
+	}
+?>
+
 <script type="text/javascript">
 	var user_type = <?php echo $user_type;?>;
 </script>
@@ -43,7 +50,14 @@
 				<img src="" class="avatar">
 			</div>
 			<div class="fio-container">
-				<p class="fio">Кузницова А. В.</p>
+				<p class="fio">
+					<?php
+						$sql = "SELECT name FROM users WHERE id=$uid";
+						$result = mysqli_query($link, $sql);
+						$row = mysqli_fetch_assoc($result);
+						echo $row["name"];
+					?>
+				</p>
 			</div>
 		</div>
 	</div>
