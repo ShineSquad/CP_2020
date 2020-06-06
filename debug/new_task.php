@@ -66,6 +66,8 @@ if (isset($_GET["add"])) {
 }
 ?>
 
+<?php require "nav.php";?>
+
 <form method="GET">
 	<input type="submit" name="add" value="Add task">
 </form>

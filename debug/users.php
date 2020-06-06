@@ -7,14 +7,29 @@
 	$i = rand(0, count($arr_names)-1);
 	$n = $arr_names[$i];
 
-	if (isset($_GET["super"])) {
+		$pos = array();
+		$sql = "SELECT id FROM positions";
+		$result = mysqli_query($link, $sql);
+
+		while ($row = mysqli_fetch_assoc($result)) {
+			$pos[] = $row["id"];}
+
+	$rp = rand(0, count($pos)-1);
+	$p  = $pos[$rp];
+
+	$user_type = 2;
+	if (isset($_GET["super"]))  { $user_type = 2; }
+	if (isset($_GET["intern"])) { $user_type = 3; }
+
+	if (isset($_GET["intern"]) || isset($_GET["super"])) {
 		$sql = "INSERT INTO users (id, name, role_id)
-				VALUES (NULL, '$n', 2)";
+				VALUES (NULL, '$n', $user_type)";
 		mysqli_query($link, $sql);
-	}
-	if (isset($_GET["intern"])) {
-		$sql = "INSERT INTO users (id, name, role_id)
-				VALUES (NULL, '$n', 3)";
+
+		$uid = mysqli_insert_id($link);
+
+		$sql = "INSERT INTO users_position (id, user_id, position_id)
+				VALUES (NULL, $uid, $p)";
 		mysqli_query($link, $sql);
 	}
 
@@ -35,6 +50,8 @@
 		mysqli_query($link, $sql);
 	}
 ?>
+
+<?php require "nav.php";?>
 
 <form method="GET">
 	<input type="submit" name="super"  value="Add supervisor">

@@ -63,6 +63,27 @@ $tables[] = '{
 	}
 }';
 $tables[] = '{
+	"name": "users_position",
+	"columns": {
+		"id":             "INT AUTO_INCREMENT",
+		"user_id": "INT NOT NULL",
+		"position_id":    "INT NOT NULL"
+	},
+	"primary_key": "id",
+	"foreign_keys": {
+		"0": {
+			"column": "user_id",
+			"ref":    "users(id)",
+			"options": "ON DELETE CASCADE"
+		},
+		"1": {
+			"column": "position_id",
+			"ref":    "positions(id)",
+			"options": "ON DELETE CASCADE"
+		}
+	}
+}';
+$tables[] = '{
 	"name": "tasks",
 	"columns": {
 		"id":          "INT AUTO_INCREMENT",

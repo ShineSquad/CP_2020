@@ -19,6 +19,8 @@
 	}
 ?>
 
+<?php require "nav.php";?>
+
 <form method="GET">
 	<table>
 		<tr>

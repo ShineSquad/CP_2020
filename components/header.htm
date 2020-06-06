@@ -1,3 +1,6 @@
+<script type="text/javascript">
+	var user_type = <?php echo $user_type;?>;
+</script>
 <header>
 	<div class="role">
 		<a href="./supervisor.php">Руководитель</a>
@@ -5,9 +8,10 @@
 	</div>
 	<div class="user-list">
 		<form method="GET">
-			<select name="users" id="">
+			<select name="users" onchange="change_user(this.value)" autocomplete="off">
+				<option selected disabled>Пользователь</option>
 				<?php
-					$user_id=
+					$user_id = 0;
 					$sql = "SELECT * FROM users
 					WHERE role_id=$user_type";
 					$result = mysqli_query($link, $sql);
@@ -29,7 +33,6 @@
 
 				?>
 			</select>
-			<input type="submit" class="change_name" name="change_user" value="Изменить пользователя">
 		</form>
 	</div>
 </header> 
