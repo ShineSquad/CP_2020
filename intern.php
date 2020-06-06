@@ -35,7 +35,7 @@
 					Текущие задачи
 				</div>
 				<div class="active-tasks-container">
-					<div class="active-item">
+					
 						<?php
 							if (isset($_GET["see_task"])) {
 								$id = $_GET["task_id"];
@@ -46,6 +46,7 @@
 									$title = $row["title"];
 									$description = $row["description"];
 
+									echo "<div class='active-item'>";
 									echo "<div class='item-title'>$title</div>";
 									echo "<div class='item-description'>$description</div>";
 								}
@@ -63,16 +64,10 @@
 									echo "<a href='$d_link' download>$d_name</a>";
 								}
 
+									echo "</div>";
 								echo "</div>";
 							}
 						?>
-						<div class="item-title">Название</div>
-						<div class="item-description">Описание Описание ОписаниеОписаниеОписаниеОписание Описание ОписаниеОписаниеОписаниеОписание Описание Описание Описание Описание</div>
-						<div class="item-documents">
-							<a href="#" download>Документ 1</a>
-							<a href="#" download>Документ 2</a>
-						</div>
-					</div>
 				</div>
 			</div>
 			<div class="check-list">
