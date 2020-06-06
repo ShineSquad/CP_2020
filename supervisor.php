@@ -6,9 +6,9 @@
 <html>
 	<?php require "./components/head.htm" ?>
 <body>
-	<?php require "./components/header-style.htm"?>
+	<?php require "./components/header.php"?>
 	<main>
-		<?php require "./components/card-style.htm"?>
+		<?php require "./components/card-style.php"?>
 		<div class="title-instruction">
 			Управление стажерами
 		</div>

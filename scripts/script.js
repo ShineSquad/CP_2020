@@ -50,3 +50,53 @@ function change_select() {
 		view.setAttribute("value", 0);
 	}
 }
+
+function open_reglament() {
+	var main = document.getElementById('main-content'),
+		generalities = document.getElementById('generalities');
+	main.style.display = "none";
+	generalities.style.display = "block";
+}
+
+function back() {
+	var main = document.getElementById('main-content'),
+		generalities = document.getElementById('generalities'),
+		tasks = document.getElementById('tasks'),
+		responsibilities = document.getElementById('responsibilities'),
+		documents = document.getElementById('documents'),
+		instituteStructure = document.getElementById('institute-structure');
+	main.style.display = "block";
+	generalities.style.display = "none";
+	tasks.style.display = "none";
+	responsibilities.style.display = "none";
+	documents.style.display = "none";
+	instituteStructure.style.display = "none";
+}
+
+function open_task() {
+	var main = document.getElementById('main-content'),
+		tasks = document.getElementById('tasks');
+	main.style.display = "none";
+	tasks.style.display = "block";
+}
+
+function open_responsibilities() {
+	var main = document.getElementById('main-content'),
+		responsibilities = document.getElementById('responsibilities');
+	main.style.display = "none";
+	responsibilities.style.display = "block";
+}
+
+function open_documents() {
+	var main = document.getElementById('main-content'),
+		documents = document.getElementById('documents');
+	main.style.display = "none";
+	documents.style.display = "block";
+}
+
+function open_institute() {
+	var main = document.getElementById('main-content'),
+		instituteStructure = document.getElementById('institute-structure');
+	main.style.display = "none";
+	instituteStructure.style.display = "block";
+}
