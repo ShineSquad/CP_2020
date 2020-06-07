@@ -2,7 +2,7 @@ function apply_task(event) {
 	var task = document.getElementsByName("task"),
 		docs = document.getElementsByName("document"),
 		intern = document.getElementsByName("intern"),
-		req = [];
+		req = ["super="+uid];
 	for (t of task) {
 		if (t.checked) {
 			req.push("task=" + t.value);
@@ -19,17 +19,48 @@ function apply_task(event) {
 		}
 	}
 
-	var base = "supervisor.php?",
-		get = "apply_task=1&" + req.join("&");
+	var link = "php/apply_task.php?" + req.join("&");
 
-	window.location.href = base + get;
-} 
+	console.log(link);
+	request(link, (resp) => {window.location.reload()});
+}
 
 function change_docs(id) {
-	var base = "supervisor.php?",
-		get  = "change_docs=1&intern_id=" + id;
+	var link = "php/get_docs.php?intern_id=" + id;
 
-	window.location.href = base + get;
+	request(link, place_docs);
+
+	function place_docs(resp) {
+		let data = JSON.parse(resp),
+			parent = document.getElementsByClassName("document-list")[0];
+		
+		while (parent.children[0]) {
+			parent.removeChild(parent.children[0]);
+		}
+
+		for (doc of data) {
+			let label = document.createElement("label"),
+				input = document.createElement("input"),
+				p = document.createElement("p"),
+				id = "documentID_" + doc["doc_id"];
+
+			label.setAttribute("for", id);
+			label.className = "document-item";
+
+			input.id = id;
+			input.type = "checkbox";
+			input.name = "document";
+			input.value = doc["doc_id"];
+
+			p.innerText = doc["doc_name"];
+
+			label.appendChild(input);
+			label.append(" ");
+			label.appendChild(p);
+
+			parent.appendChild(label);
+		}
+	}
 }
 
 function change_user(id) {
@@ -99,4 +130,21 @@ function open_institute() {
 		instituteStructure = document.getElementById('institute-structure');
 	main.style.display = "none";
 	instituteStructure.style.display = "block";
+}
+
+// XML HTTP
+
+function request(link, callback) {
+	var xhr = new XMLHttpRequest();
+
+	xhr.open('GET', link, true);
+	xhr.send();
+
+	xhr.onreadystatechange = function() { // (3)
+		if (xhr.readyState != 4) return;
+
+		if (xhr.status == 200) {
+			callback(xhr.responseText);
+		}
+	}
 }
