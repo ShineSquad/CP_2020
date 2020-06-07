@@ -18,7 +18,7 @@
 
 	foreach ($instructions as $key => $file) {
 		if ($file == "." || $file == "..") continue;
-		$f_link = $base . $file;
+		$f_link = "/CP_2020/data/" . $file;
 		$name = "Инструкция №" . preg_replace("/[\D]/", "", $file);
 
 		$sql = "INSERT INTO instructions (id, name, link)

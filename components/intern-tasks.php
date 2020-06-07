@@ -6,16 +6,19 @@
 		</div>
 		<div class="task-list">
 			<?php
-				$sql = "SELECT * FROM tasks WHERE to_id=$user_id";
+				$sql = "SELECT * FROM tasks WHERE to_id=$uid";
 				$result = mysqli_query($link, $sql);
 				while ($row = mysqli_fetch_assoc($result)) {
 					$id = $row['id'];
 					$title = $row['title'];
 
-					$out = "<form method='GET'>
-						<input type='text' name='task_id' value='$id' style='display:none'>
-						<input type='submit' name='see_task' class='task-item' value='$title'>
-					</form>";
+					// $out = "<form method='GET'>
+					// 	<input type='text' name='task_id' value='$id' style='display:none'>
+					// 	<input type='submit' name='see_task' class='task-item' value='$title'>
+					// </form>";
+					$out = "<div onclick='task_info($id)'>
+								$title
+							</div>";
 
 					echo $out;
 				}
@@ -27,7 +30,7 @@
 			<div class="active-title">
 				Активные задачи
 			</div>
-			<div class="active-list">
+			<div class="active-list" id="task_info">
 				<?php
 					if (isset($_GET["see_task"])) {
 						$id = $_GET["task_id"];

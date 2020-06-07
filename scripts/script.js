@@ -70,6 +70,49 @@ function change_user(id) {
 	window.location.href = base + get;
 }
 
+function task_info(id) {
+	var link = "php/get_task.php?id=" + id;
+	
+	request(link, show_task_info);
+
+	function show_task_info(resp) {
+		let data = JSON.parse(resp),
+			parent = document.getElementById("task_info");
+		console.log(data);
+		while (parent.children[0]) {
+			parent.removeChild(parent.children[0]);
+		}
+
+		let a_item = document.createElement("div"),
+			item_t = document.createElement("div"),
+			item_d = document.createElement("div"),
+			i_docs = document.createElement("div");
+
+		a_item.className = "active-item";
+		item_t.className = "item-title";
+		item_d.className = "item-description";
+		i_docs.className = "item-documents";
+
+		item_t.innerText = data["title"];
+		item_d.innerText = data["description"];
+
+		for (doc of data["documents"]) {
+			let a = document.createElement("a");
+
+			a.href = doc["link"];
+			a.innerText = doc["name"];
+
+			i_docs.appendChild(a);
+		}
+
+		a_item.appendChild(item_t);
+		a_item.appendChild(item_d);
+		a_item.appendChild(i_docs);
+
+		parent.appendChild(a_item);
+	}
+}
+
 function change_select() {
 	var view = document.getElementById("view"),
 		change = view.getAttribute("value");

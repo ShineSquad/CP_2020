@@ -13,7 +13,7 @@
 		<div class="title-instruction">
 			Инструкция должности
 		</div>
-		<?php require "./components/intern-main.htm"?>
+		<?php require "./components/intern-main.php"?>
 		
 		<?php require "./components/intern-generalities.htm"?>
 
