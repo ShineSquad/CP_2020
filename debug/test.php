@@ -7,7 +7,8 @@
 	}
 </style>
 <?php require "img.php";
-	for ($i=0; $i<1000; $i++) {
-		echo "<img src='$avatar'>";
+	foreach ($img_links as $key => $value) {
+		// echo "<img src='$value'>";
+		echo $value . "<img src='$value'><br>";
 	}
 ?>

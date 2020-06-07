@@ -1,5 +1,5 @@
 <?php
-	$uid = 1;
+	$uid = 2;
 	if (isset($_GET["uid"])) {
 		$uid = $_GET["uid"];
 	}
@@ -7,7 +7,8 @@
 ?>
 
 <script type="text/javascript">
-	var user_type = <?php echo $user_type;?>;
+	var user_type = <?php echo $user_type;?>,
+		uid = <?php echo $uid;?>;
 </script>
 <header>
 	<div class="changemenu">
