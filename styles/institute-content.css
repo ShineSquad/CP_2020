@@ -53,6 +53,7 @@ main .institute-content .list-item .title {
 }
 
 main .institute-content .list-item li {
-	margin-left: 25px;
+	margin-left: 35px;
 	padding-top: 5px;
+	padding-left: 10px;
 }

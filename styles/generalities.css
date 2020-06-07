@@ -59,6 +59,7 @@ main .generalities-content .generalities-right .generalities-right-content .list
 }
 
 main .generalities-content .generalities-right .generalities-right-content .list-description li {
-	list-style-type: disc;
+	margin-left: 35px;
+	padding-left: 10px;
 	padding-bottom: 10px;
 }

@@ -53,6 +53,7 @@ main .documents-content .list-item .title {
 }
 
 main .documents-content .list-item li {
-	padding-left: 35px;
+	margin-left: 35px;
 	padding-top: 5px;
+	padding-left: 10px;
 }
