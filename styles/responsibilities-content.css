@@ -22,6 +22,7 @@ main .responsibilities-content .responsibilities-left {
 	width: 360px;
 	background-color: #F4F4F4;
 	border-radius: 4px;
+	height: 620px;
 }
 
 main .responsibilities-content .responsibilities-left .arrow-back {
@@ -40,7 +41,8 @@ main .responsibilities-content .responsibilities-right {
 }
 
 main .responsibilities-content .list-item {
-	height: auto;
+	overflow-y: auto;
+	height: 100%;
 }
 
 main .responsibilities-content .list-item * {
