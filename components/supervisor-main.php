@@ -1,6 +1,6 @@
 <div class="main-supervisor" id="main-content">
 	<div class="task-container">
-		<div class="title">
+		<div class="title white">
 			Задачи
 		</div>
 		<div class="task-list">
@@ -13,8 +13,8 @@
 					$node_id="n_".$id;
 					echo "
 						<label for='$node_id' class='task-item' id='$id'>
-							$title
 							<input id='$node_id' type='radio' name='task' value='$id'/>
+							$title
 						</label>
 					";
 				}
@@ -28,9 +28,12 @@
 		<div class="document-list">
 			
 		</div>
+		<div class="button-container">
+			<button onclick="apply_task(); return false;">Выдать задание</button>
+		</div>
 	</div>
 	<div class="intern-container">
-		<div class="title">
+		<div class="title white">
 			Стажеры
 		</div>
 		<div class="intern-list">
@@ -52,23 +55,17 @@
 						$id = $row['id'];
 						$name = $row['name'];
 						$node_id="f_".$id;
-						$selected = "";
-						if (isset($intern_id) && $intern_id == $id) $selected = "checked";
 
 						echo "
 							<label for='$node_id' class='intern-item' id='$id'>
-								$name
 								<input id='$node_id' type='radio' name='intern' value='$id'
-								oninput='change_docs($id)'
-								$selected />
+								oninput='change_docs($id)' />
+								$name
 							</label>
 						";
 					}
 				}
 			?>
 		</div>
-	</div>
-	<div class="button-container">
-		<button onclick="apply_task(); return false;">Выдать задание</button>
 	</div>
 </div>

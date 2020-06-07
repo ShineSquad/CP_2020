@@ -8,54 +8,69 @@ main .main-supervisor .intern-container {
 
 main .main-supervisor .task-container {
 	width: 250px;
-	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	background: linear-gradient(102.63deg, #5ADB6F 19.12%, #68E48B 86.53%);
 	float: left;
-	border-radius: 5px 0 0 0;
+	border-radius: 4px;
 }
 
 main .main-supervisor .document-container {
-	width: 400px;
-	background: linear-gradient(125.38deg, #5ADB6F 19.12%, #68E48B 86.53%);
+	width: 380px;
+	margin: 0 10px;
+	box-sizing: border-box;
+	background: #F4F4F4;
+	box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.15);
 }
 
 main .main-supervisor .intern-container {
 	width: 250px;
-	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	background: linear-gradient(100.57deg, #52C3D4 19.12%, #60DBDB 86.53%);
 	float: right;
-	border-radius: 0 5px 0 0;
+	border-radius: 4px;
 }
 
 main .main-supervisor div .title {
-	width: 100%;
-	height: 40px;
-	line-height: 40px;
+	width: 80%;
+	margin: 0px 10%;
+	height: 100px;
+	line-height: 100px;
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
+	color: #2B2B2B;
+	border-bottom: solid 1px #E5E5E5;
+}
+main .main-supervisor div .white {
+	color: white;
+	border-bottom: solid 1px white;
 }
 
 main .main-supervisor .task-container .task-list, 
-main .main-supervisor .document-container .document-list, 
 main .main-supervisor .intern-container .intern-list {
-	height: calc(100% - 44px);
+	height: calc(100% - 101px);
+	width: 100%;
+	overflow-y: auto;
+}
+main .main-supervisor .document-container .document-list {
+	height: calc(100% - 101px - 101px);
 	width: 100%;
 	overflow-y: auto;
 }
 
 main .main-supervisor .task-container .task-list .task-item,
-main .main-supervisor .document-container .document-list .document-item,
-main .main-supervisor .intern-container .intern-list .intern-item {
-	height: 30px;
-	width: calc(100% - 10px);
-	cursor: pointer;
-	padding-left: 10px;
-	line-height: 30px;
-
-}
-
-main .main-supervisor .task-container .task-list .task-item {
-	border-bottom: 1px solid black;
+main .main-supervisor .intern-container .intern-list .intern-item,
+main .main-supervisor .document-container .document-list .document-item {
+	height: 50px;
+	line-height: 50px;
+	width: 80%;
+	margin: 0px 10%;
+	border-bottom: 1px solid white;
 	display: block;
+	box-sizing: border-box;
+	color: white;
+}
+main .main-supervisor .document-container .document-list .document-item {
+	border-bottom: 1px solid #E5E5E5;
+	color: #2B2B2B;
 }
 
 main .main-supervisor .document-container .document-list .document-item p {
@@ -66,26 +81,23 @@ main .main-supervisor .document-container .document-list .document-item {
 	display: inline-block;
 }
 
-main .main-supervisor .intern-container .intern-list .intern-item {
-	border-bottom: 1px solid black;
-	display: block;
-}
-
 main .main-supervisor .button-container {
 	width: 100%;
-	height: 50px;
-	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
-	border-radius: 0 0 5px 5px;
+	height: 101px;
+	line-height: 101px;
+	text-align: center;
 }
 
 main .main-supervisor .button-container button {
-	width: 100%;
-	height: 100%;
-	font-size: 20px;
+	width: 180px;
+	height: 55px;
+	font-size: 18px;
 	cursor: pointer;
 	border: none;
-	background-color: #52C3D4;
-	border-radius: 0 0 5px 5px;
+	background-color: #FA7C68;
+	border-radius: 27.5px;
+	color: #FFFFFF;
+	text-align: center;
 }
 
 main .main-supervisor .button-container button:hover {

@@ -24,9 +24,8 @@
 				<img src="styles/icons/1.png">
 			</div>
 			<div class="card-title">
-				<p>
-					Задания для ознакомления с должностью
-				</p>
+				<p class="top-title">Задания</p>
+				<p class="bottom-title">для ознакомления <br>с должностью</p>
 			</div>
 		</div>
 	</div>
@@ -37,7 +36,9 @@
 			</div>
 			<div class="card-title">
 				<p>
-					Должностные обязанности, права и ответственность
+					Должностные<br>
+					обязанности, права и<br>
+					ответственность
 				</p>
 			</div>
 		</div>

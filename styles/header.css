@@ -9,41 +9,52 @@ header {
 header .changemenu {
 	position: absolute;
 	top: 0;
-	left: calc(50% - 100px);
+	left: calc(50% - 150px);
+	width: 300px;
 }
 
 header .changemenu .view select {
-	width: 200px;
+	width: 100%;
 	height: 70%;
-	outline: none;
-	border: none;
+	/*outline: none;
+	border: none;*/
 	cursor: pointer;
-	border-radius: 0 0 5px 5px;
-	background-color: #5ADB6F;
+	/*background-color: #5ADB6F;*/
 }
 
 header .changemenu .view .links {
 	height: 30%;
+	position: relative;
 }
 
 header .changemenu .view .links a {
 	text-decoration: none;
 	color: black;
+	width: 50%;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	display: block;
+	text-align: center;
+	height: 20px;
+	line-height: 20px;
+	font-size: 12px;
 }
 
 header .changemenu .view .links a:first-child {
-	margin-left: 13px;
+	/*margin-left: 13px;*/
+	left: 0px;
 }
 
 header .changemenu .view .links a:hover {
 	color: white;
+	background-color: #47F98A;
 }
 
 header .changemenu .view {
 	height: 0;
 	overflow: hidden;
-	background-color: #5ADB6F;
-	border-radius: 0 0 5px 5px;
+	background-color: #F9F8F8;
 }
 
 header .changemenu .triangle {
@@ -53,10 +64,12 @@ header .changemenu .triangle {
 header .changemenu .triangle::after {
     content: ''; 
     position: absolute; /* Абсолютное позиционирование */
-    border: 10px solid transparent; /* Прозрачные границы */
-    border-top: 10px solid #5ADB6F; /* Добавляем треугольник */
     cursor: pointer;
-	left: 85px;
+	left: 0px;
+	width: 100%;
+	height: 20px;
+	background-color: #F9F8F8;
+	border-radius: 0 0 5px 5px;
 }
 
 header .header-container {
