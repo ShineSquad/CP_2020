@@ -1,0 +1,93 @@
+main .main-supervisor .task-container, 
+main .main-supervisor .document-container, 
+main .main-supervisor .intern-container {
+	height: 600px;
+	display: inline-block;
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+}
+
+main .main-supervisor .task-container {
+	width: 250px;
+	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	float: left;
+	border-radius: 5px 0 0 0;
+}
+
+main .main-supervisor .document-container {
+	width: 400px;
+	background: linear-gradient(125.38deg, #5ADB6F 19.12%, #68E48B 86.53%);
+}
+
+main .main-supervisor .intern-container {
+	width: 250px;
+	background: linear-gradient(125.38deg, #F95962 19.12%, #FB8E6B 86.53%);
+	float: right;
+	border-radius: 0 5px 0 0;
+}
+
+main .main-supervisor div .title {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+main .main-supervisor .task-container .task-list, 
+main .main-supervisor .document-container .document-list, 
+main .main-supervisor .intern-container .intern-list {
+	height: calc(100% - 44px);
+	width: 100%;
+	overflow-y: auto;
+}
+
+main .main-supervisor .task-container .task-list .task-item,
+main .main-supervisor .document-container .document-list .document-item,
+main .main-supervisor .intern-container .intern-list .intern-item {
+	height: 30px;
+	width: calc(100% - 10px);
+	cursor: pointer;
+	padding-left: 10px;
+	line-height: 30px;
+
+}
+
+main .main-supervisor .task-container .task-list .task-item {
+	border-bottom: 1px solid black;
+	display: block;
+}
+
+main .main-supervisor .document-container .document-list .document-item p {
+	display: inline-block;
+}
+
+main .main-supervisor .document-container .document-list .document-item {
+	display: inline-block;
+}
+
+main .main-supervisor .intern-container .intern-list .intern-item {
+	border-bottom: 1px solid black;
+	display: block;
+}
+
+main .main-supervisor .button-container {
+	width: 100%;
+	height: 50px;
+	box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.2);
+	border-radius: 0 0 5px 5px;
+}
+
+main .main-supervisor .button-container button {
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	cursor: pointer;
+	border: none;
+	background-color: #52C3D4;
+	border-radius: 0 0 5px 5px;
+}
+
+main .main-supervisor .button-container button:hover {
+	background-color: #60DBDB;
+}

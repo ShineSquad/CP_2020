@@ -1,6 +1,6 @@
 <?php
 	require "./debug/db_link.php";
-	$user_type = 3;
+	$user_type = 2;
 ?>
 <!DOCTYPE html>
 <html>
@@ -12,9 +12,7 @@
 		<div class="title-instruction">
 			Управление стажерами
 		</div>
-		<div class="main-content" id="main-content">
-			main
-		</div>
+		<?php require "./components/supervisor-main.php"?>
 	</main>
 	<?php require"./components/footer-style.htm"?>
 </body>
