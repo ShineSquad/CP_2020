@@ -12,11 +12,7 @@
 					$id = $row['id'];
 					$title = $row['title'];
 
-					// $out = "<form method='GET'>
-					// 	<input type='text' name='task_id' value='$id' style='display:none'>
-					// 	<input type='submit' name='see_task' class='task-item' value='$title'>
-					// </form>";
-					$out = "<div onclick='task_info($id)'>
+					$out = "<div onclick='task_info($id)' class='task-item'>
 								$title
 							</div>";
 

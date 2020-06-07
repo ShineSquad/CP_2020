@@ -33,7 +33,7 @@ main .institute-content .institute-left .arrow-back {
 main .institute-content .institute-right {
 	width: 540px;
 	float: right;
-	background: linear-gradient(114.13deg, #F45B64 19.12%, #FF9B7C 86.53%);
+	background: linear-gradient(115.74deg, #6796FC 19.12%, #6BB7FC 86.53%);
 	border-radius: 4px;
 	color: white;
 	overflow-y: auto;
@@ -53,6 +53,6 @@ main .institute-content .list-item .title {
 }
 
 main .institute-content .list-item li {
-	padding-left: 35px;
+	margin-left: 25px;
 	padding-top: 5px;
 }

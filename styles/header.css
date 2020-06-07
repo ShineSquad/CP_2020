@@ -17,6 +17,9 @@ header .changemenu .view select {
 	height: 70%;
 	outline: none;
 	border: none;
+	cursor: pointer;
+	border-radius: 0 0 5px 5px;
+	background-color: #5ADB6F;
 }
 
 header .changemenu .view .links {
@@ -26,12 +29,21 @@ header .changemenu .view .links {
 header .changemenu .view .links a {
 	text-decoration: none;
 	color: black;
-	padding-left: 5px;
+}
+
+header .changemenu .view .links a:first-child {
+	margin-left: 13px;
+}
+
+header .changemenu .view .links a:hover {
+	color: white;
 }
 
 header .changemenu .view {
 	height: 0;
 	overflow: hidden;
+	background-color: #5ADB6F;
+	border-radius: 0 0 5px 5px;
 }
 
 header .changemenu .triangle {
@@ -104,5 +116,5 @@ header .header-container .user-container .fio-container {
 	height: 100%;
 	float: right;
 	line-height: 120px;
-	margin-right: 70px;
+	margin-right: 120px;
 }
