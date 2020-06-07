@@ -11,7 +11,15 @@
 				</p>
 			</div>
 		</div>
-		<div class="active-tasks" onclick="open_task()" task-count="9">
+		<?php
+			$sql = "SELECT * FROM tasks
+					WHERE to_id=$uid";
+			$result = mysqli_query($link, $sql);
+			$count = 0;
+			while ($row = mysqli_fetch_assoc($result)) $count++;
+			
+			echo "<div class='active-tasks' onclick='open_task()' task-count='$count'>";
+		?>
 			<div class="card-img">
 				<img src="styles/icons/1.png">
 			</div>
