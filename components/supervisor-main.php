@@ -36,7 +36,7 @@
 		<div class="intern-list">
 			<?php
 				$sql = "SELECT * FROM users
-						INNER JOIN menthors ON users.id=menthors.supervisor WHERE menthors.supervisor=$user_id";
+						INNER JOIN menthors ON users.id=menthors.supervisor WHERE menthors.supervisor=$uid";
 				$interns = array();
 				$result = mysqli_query($link, $sql);
 				if ($result) {

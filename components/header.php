@@ -1,15 +1,10 @@
 <?php
-	$uid = 2;
+	$uid = -1;
 	if (isset($_GET["uid"])) {
 		$uid = $_GET["uid"];
 	}
 	require "debug/img.php";
 ?>
-
-<script type="text/javascript">
-	var user_type = <?php echo $user_type;?>,
-		uid = <?php echo $uid;?>;
-</script>
 <header>
 	<div class="changemenu">
 		<div class="view" id="view" value="0">
@@ -20,14 +15,13 @@
 			<select name="users" class="users" onchange="change_user(this.value)" autocomplete="off">
 				<option selected disabled>Пользователь</option>
 				<?php
-					$user_id = 0;
 					$sql = "SELECT * FROM users
 					WHERE role_id=$user_type";
 					$result = mysqli_query($link, $sql);
 					$first = true;
 					while ($row = mysqli_fetch_assoc($result)) {
-						if($first) {
-							$user_id = $row["id"];
+						if($first && $uid == -1) {
+							$uid = $row["id"];
 							$first = false;
 						}
 						$id = $row['id'];
@@ -37,7 +31,7 @@
 						";
 					}
 					if(isset($_GET["change_user"])) {
-						$user_id = $_GET["users"];
+						$uid = $_GET["users"];
 					}
 				?>
 			</select>
@@ -67,4 +61,8 @@
 			</div>
 		</div>
 	</div>
-</header> 
+</header>
+<script type="text/javascript">
+	var user_type = <?php echo $user_type;?>,
+		uid = <?php echo $uid;?>;
+</script>

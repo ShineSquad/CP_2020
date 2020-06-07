@@ -100,13 +100,14 @@ header .header-container .user-container {
 
 header .header-container .user-container .avatar-container {
 	height: 100%;
-	margin-top: 40px;
+	/*margin-top: 40px;*/
 	margin-left: 20px;
 }
 
 header .header-container .user-container .avatar-container .avatar {
 	width: 40px;
 	height: 40px;
+	margin-top: 40px;
 	border-radius: 25px;
 	background-color: grey;
 	float: left;
@@ -114,7 +115,9 @@ header .header-container .user-container .avatar-container .avatar {
 
 header .header-container .user-container .fio-container {
 	height: 100%;
-	float: right;
+	/*float: right;*/
 	line-height: 120px;
-	margin-right: 120px;
+	margin-left: 10px;
+	vertical-align: top;
+
 }
